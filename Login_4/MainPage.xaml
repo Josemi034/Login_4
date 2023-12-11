@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Login_4.MainPage" Title="Inicos de Seccion"
+            >
+
+    <ContentPage.Resources>
+        <Style TargetType="Frame">
+            <Setter Property="BackgroundColor" Value="SkyBlue" />
+            <Setter Property="BorderColor" Value="#182C61" />
+            <Setter Property="Margin" Value="10" />
+            <Setter Property="CornerRadius" Value="15" />
+        </Style>
+
+        <Style TargetType="Label">
+            <Setter Property="Margin" Value="0, 4" />
+        </Style>
+
+        <Style x:Key="headerLabel" TargetType="Label">
+            <Setter Property="Margin" Value="0, 8" />
+            <Setter Property="FontSize" Value="Large" />
+            <Setter Property="TextColor" Value="#182C61" />
+        </Style>
+
+        <Style TargetType="Image">
+            <Setter Property="FlexLayout.Order" Value="-1" />
+            <Setter Property="FlexLayout.AlignSelf" Value="Center" />
+            
+        </Style>
+
+    </ContentPage.Resources>
+    
+    
+    <ScrollView>
+        <Grid>
+            <Frame>
+
+            <Frame.Background>
+
+                <LinearGradientBrush EndPoint="1,0">
+                    <GradientStop Color="SkyBlue"
+                            Offset="0.1" />
+                    <GradientStop Color="AliceBlue"
+                            Offset="1.0" />
+                </LinearGradientBrush>
+            </Frame.Background>
+            </Frame>
+            <StackLayout>
+        <Frame CornerRadius="150" HeightRequest="100" WidthRequest="100" Margin="10" HorizontalOptions="Center" VerticalOptions="Center" >
+        <Image Source="login" />
+        </Frame>
+
+        <Frame WidthRequest="200" BackgroundColor="SkyBlue"
+                   HeightRequest="200">
+            <FlexLayout Direction="Column">
+                <StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Entry Placeholder="Usuario" x:Name="txtUsuario" WidthRequest="120" TextColor="Black"  Margin="25" />
+                        <Entry Placeholder="Contraseña" x:Name="txtPassword" IsPassword="True" WidthRequest="100" TextColor="Black" Margin="25" />
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal">
+                        <Button Text="✅ Iniciar sesión" BackgroundColor="LightGreen" WidthRequest="150" HeightRequest="20" Margin="10,0,0,0"  TextColor="White" CornerRadius="25"
+                        x:Name="btnLogin" Clicked="btnLogin_Clicked" />
+                        <Button Text="❌ Cerrar" BackgroundColor="PaleVioletRed" WidthRequest="150" TextColor="White" CornerRadius="25" 
+                        x:Name="btnSalir" Clicked="btnSalir_Clicked" />
+                    </StackLayout>
+
+                </StackLayout>
+            </FlexLayout>
+        </Frame>
+
+
+
+
+    </StackLayout>
+    </Grid>
+    </ScrollView>
+
+
+</ContentPage>

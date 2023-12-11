@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Login_4.Welcome">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout BackgroundColor="LightGreen">
+                <Label Text="¡Bienvenido! Administrador" 
+           FontAttributes="Bold" 
+           FontSize="36"
+           TextColor="Black"
+          VerticalTextAlignment="Center" 
+           HorizontalTextAlignment="Center" />
+
+                <StackLayout  BackgroundColor="LightGreen">
+                    <Frame CornerRadius="20" BackgroundColor="SkyBlue">
+                    <Image Source="jose.jpg" Aspect="AspectFit"/>
+                    </Frame>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+
+                    <Button Text="Operaciones" TextColor="Black"
+                    HorizontalOptions="Center"
+                    BackgroundColor="SkyBlue"
+                    WidthRequest="150"
+                    HeightRequest="50"
+                    BorderWidth="2"
+                    BorderColor="LightYellow"
+                    CornerRadius="25"
+                    x:Name="btncrud"
+                    Clicked="btncrud_Clicked"/>
+
+                    <Button Text="Salir" TextColor="White"
+                    HorizontalOptions="Center"
+                    BackgroundColor="Red"
+                    WidthRequest="150"
+                    HeightRequest="50"
+                    BorderWidth="2"
+                    BorderColor="LightYellow"
+                    CornerRadius="25" 
+                    x:Name="Salir"   
+                    Clicked="Salir_Clicked"
+                            />
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Login_4.Supervisor">
+    <ContentPage.Content>
+        <!-- Se utiliza un ScrollView para que el contenido sea desplazable en caso de que no quepa en la pantalla -->
+        <ScrollView>
+            <!-- Contenedor principal de la página con un fondo gris claro -->
+            <StackLayout BackgroundColor="LightGray">
+                <!-- Título grande y centrado -->
+                <Label Text="¡Bienvenido! Supervisor" 
+                       FontAttributes="Bold" 
+                       FontSize="36"
+                       TextColor="Black"
+                       VerticalTextAlignment="Center" 
+                       HorizontalTextAlignment="Center" />
+
+                <!-- Contenedor para la imagen del usuario -->
+                <StackLayout BackgroundColor="LightGray">
+                    <Image Source="https://cdn.icon-icons.com/icons2/966/PNG/128/Users_icon-icons.com_74706.png" HeightRequest="250" Aspect="AspectFit"/>
+                </StackLayout>
+
+                <!-- Entradas de texto para el criterio de búsqueda, nombre de usuario, teléfono y correo -->
+                <Entry Placeholder="Introduzca el Criterio a Buscar" x:Name="id_usuario" HorizontalTextAlignment="Center" TextColor="Black" BackgroundColor="Azure"/>
+                <Entry Placeholder="Nombre de Usuario" x:Name="nombre_user" IsEnabled="False" HorizontalTextAlignment="Center" FontAttributes="Bold" TextColor="Black" BackgroundColor="Azure"/>
+                <Entry Placeholder="Teléfono" x:Name="telefono" IsEnabled="False" HorizontalTextAlignment="Center" FontAttributes="Bold"  TextColor="Black" BackgroundColor="Azure"/>
+                <Entry Placeholder="Correo" x:Name="email" IsEnabled="False" HorizontalTextAlignment="Center" FontAttributes="Bold"  TextColor="Black" BackgroundColor="Azure"/>
+
+                <!-- Etiqueta para mostrar resultados de búsqueda -->
+                <Label x:Name="resultadoBusqueda" Text="" />
+
+                <!-- Botones para limpiar, validar conexión, mostrar datos y buscar -->
+                <Button Text="Limpiar" Clicked="LimpiarButton_Clicked" BackgroundColor="Yellow" Margin="10"/>
+                <Button Text="🌎 Validar Conexion"  BackgroundColor="#2196F3" TextColor="White" Clicked="Button_Clicked"/>
+
+                <!-- Grid para alinear los botones de "Mostrar Datos" y "Buscar" -->
+                <Grid Grid.Row="2" RowDefinitions="Auto,Auto" ColumnDefinitions="*,*">
+                    <Button Grid.Row="0" Grid.Column="0"  Text="📚 Mostrar Datos" BackgroundColor="#1e3799" TextColor="White" x:Name="getbutton" Clicked="Getbutton_Clicked" />
+                    <Button Grid.Row="0" Grid.Column="1"  Text="🔍 Buscar" BackgroundColor="#48dbfb" TextColor="White"  x:Name="Buscar" Clicked="Buscar_Clicked" />
+                </Grid>
+
+                <!-- Botón para salir de la aplicación -->
+                <StackLayout>
+                    <Button Text="Salir" TextColor="White"
+                    HorizontalOptions="Center"
+                    BackgroundColor="Red"
+                    WidthRequest="150"
+                    HeightRequest="50"
+                    BorderWidth="2"
+                    BorderColor="LightYellow"
+                    CornerRadius="25" 
+                    x:Name="Salir"
+                    Clicked="Salir_Clicked"/>
+                </StackLayout>
+
+                <!-- Lista de elementos mostrados en ListView -->
+                <ListView Grid.Row="3" x:Name="MyListView" HasUnevenRows="True" Margin="1" BackgroundColor="LightGray">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <!-- Grid para mostrar los detalles de cada elemento en la lista -->
+                                <Grid RowDefinitions="Auto" ColumnDefinitions="1*, 3*, 4*, 6*" Padding="1" Margin="2" BackgroundColor="Bisque">
+                                    <Frame Grid.Row="0" Grid.Column="0" BorderColor="Black" Padding="5">
+                                        <Label Text="{Binding Id_usuario}" TextColor="Black" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
+                                    </Frame>
+                                    <Frame Grid.Row="0" Grid.Column="1" BorderColor="Black" Padding="5">
+                                        <Label Text="{Binding Nombre_user}" TextColor="Black" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
+                                    </Frame>
+                                    <Frame Grid.Row="0" Grid.Column="2" BorderColor="Black" Padding="5">
+                                        <Label Text="{Binding Telefono}" TextColor="Black" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
+                                    </Frame>
+                                    <Frame Grid.Row="0" Grid.Column="3" BorderColor="Black" Padding="5">
+                                        <Label Text="{Binding Email}" TextColor="Black" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
+                                    </Frame>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </ScrollView>
+
+    </ContentPage.Content>
+</ContentPage>

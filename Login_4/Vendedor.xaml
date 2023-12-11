@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Login_4.Vendedor">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#f5f6fa">
+
+            <!-- Etiqueta de bienvenida para el vendedor -->
+            <Label Text="¡Bienvenido! Vendedor" 
+                   FontAttributes="Bold" 
+                   FontSize="36"
+                   TextColor="Black"
+                   VerticalTextAlignment="Center" 
+                   HorizontalTextAlignment="Center" />
+
+            <!-- Selector de artículos utilizando un Picker -->
+            <Picker x:Name="ArticuloPicker" Title="Seleccionar Artículo" SelectedIndexChanged="ArticuloPicker_SelectedIndexChanged" 
+                    FontSize="25"
+                    FontAttributes="Bold"
+                    HorizontalTextAlignment="Center"
+                    TextColor="Blue">
+                <!-- Configuración de cómo se muestra cada elemento del Picker -->
+                <Picker.ItemDisplayBinding>
+                    <Binding Path="Nombre" />
+                </Picker.ItemDisplayBinding>
+            </Picker>
+
+            <!-- Etiqueta para mostrar el precio del artículo seleccionado -->
+            <Label Text="Precio:" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" FontAttributes="Bold" FontSize="22" />
+
+            <!-- Etiqueta para mostrar el precio del artículo -->
+            <Label x:Name="PrecioLabel" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" FontAttributes="Bold" FontSize="25"  TextColor="#44bd32"/>
+
+            <!-- Entrada de texto para la cantidad de artículos -->
+            <Entry Placeholder="Cantidad" Keyboard="Numeric" x:Name="CantidadEntry"  HorizontalTextAlignment="Center" FontAttributes="Bold" FontSize="25"  TextColor="#44bd32"/>
+
+            <!-- Botón para agregar una venta -->
+            <Button Text="Agregar Venta" Clicked="AgregarVenta_Clicked"
+                    BackgroundColor="#44bd32" TextColor="White"
+                    BorderRadius="5" HeightRequest="40"
+                    HorizontalOptions="CenterAndExpand" 
+                    VerticalOptions="CenterAndExpand" />
+
+            <!-- Botón para listar las ventas -->
+            <Button Text="Listar Ventas" Clicked="ListarVentas_Clicked"
+                    BackgroundColor="#3498db" TextColor="White"
+                    BorderRadius="5" HeightRequest="40"
+                    HorizontalOptions="CenterAndExpand" 
+                    VerticalOptions="CenterAndExpand" />
+
+            <!-- Etiqueta para encabezado de la lista de ventas -->
+            <Label Text="Lista de Ventas: " FontSize="25" TextColor="DarkRed" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" />
+
+            <!-- Etiqueta para mostrar el total de ventas -->
+            <Label x:Name="TotalVentasLabel" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" />
+
+            <!-- ListView para mostrar la lista de ventas -->
+            <ListView x:Name="VentasListView">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <!-- Layout horizontal para cada elemento de la lista -->
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="{Binding NombreArticulo}" HorizontalOptions="FillAndExpand" />
+                                <Label Text="{Binding Cantidad}" HorizontalOptions="FillAndExpand" />
+                                <Label Text="{Binding Precio}" HorizontalOptions="FillAndExpand" />
+                                <Label Text="{Binding Monto}" HorizontalOptions="FillAndExpand" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <!-- Botón para imprimir un ticket -->
+            <Button Text="Imprimir Ticket" Clicked="ImprimirTicket_Clicked"
+                    BackgroundColor="#2ecc71" TextColor="White"
+                    BorderRadius="5" HeightRequest="40"
+                    HorizontalOptions="CenterAndExpand" 
+                    VerticalOptions="CenterAndExpand" />
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

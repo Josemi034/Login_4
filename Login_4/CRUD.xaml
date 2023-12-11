@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Login_4.CRUD" Title="Operaciones crud😎">
+    <ContentPage.Content>
+
+
+        <StackLayout>
+
+            <ScrollView>
+                <!-- Grid para organizar los elementos en filas y columnas -->
+                <Grid RowDefinitions="Auto,Auto,Auto">
+                    <!-- Definición de tres filas -->
+
+                    <!-- Sección de entrada de datos y título -->
+                    <StackLayout Orientation="Vertical" Grid.Row="0">
+                        <!-- StackLayout para organizar verticalmente -->
+                        <!-- Marco con título -->
+                        <Frame BackgroundColor="#7f8fa6" Padding="24" CornerRadius="0">
+                            <Label Text="CRUD SQL SERVER Y XAMARIN" HorizontalTextAlignment="Center" TextColor="White" FontSize="20" Margin="0" />
+                        </Frame>
+                        <!-- Imagen O LOGO-->
+                        <Image Source="sql2.png" Margin="5"/>
+                        <!-- Campos de entrada -->
+                        <Entry Placeholder="Introduzca el ID Usuario" x:Name="id_usuario" HorizontalTextAlignment="Center" FontAttributes="Bold" TextColor="Black" BackgroundColor="Azure"/>
+                        <Entry Placeholder="Introduzca el Nombre de Usuarior" x:Name="nombre_user" HorizontalTextAlignment="Center" FontAttributes="Bold" TextColor="Black" BackgroundColor="Azure"/>
+                        <Entry Placeholder="Introduzca el Telefono" x:Name="telefono" HorizontalTextAlignment="Center" FontAttributes="Bold" TextColor="Black" BackgroundColor="Azure"/>
+                        <Entry Placeholder="Introduzca el Correo" x:Name="email" HorizontalTextAlignment="Center" FontAttributes="Bold" TextColor="Black" BackgroundColor="Azure"/>
+                    </StackLayout>
+
+                    <!-- Sección de botones -->
+                    <Grid Grid.Row="2" RowDefinitions="Auto,Auto" ColumnDefinitions="*,*">
+                        <!-- Dos filas, dos columnas -->
+                        <!-- Botones con diferentes íconos y acciones -->
+                        <Button Grid.Row="0" Grid.Column="0"  Text="🌎 Validar Conexion"  BackgroundColor="#2196F3" TextColor="White" Clicked="Button_Clicked"/>
+                        <Button Grid.Row="0" Grid.Column="1"  Text="📚 Mostrar Datos" BackgroundColor="#1e3799" TextColor="White" x:Name="getbutton" Clicked="Getbutton_Clicked" />
+                        <Button Grid.Row="1" Grid.Column="0"  Text="🔍 Buscar" BackgroundColor="#48dbfb" TextColor="White"  x:Name="btnBuscar" Clicked="BtnBuscar_Clicked"/>
+                        <Button Grid.Row="1" Grid.Column="1"  Text="&#9989; Insertar" BackgroundColor="#e1b12c" TextColor="White" x:Name="postbutton" Clicked="Postbutton_Clicked"/>
+                        <Button Grid.Row="2" Grid.Column="0"  Text="📝 Actualizar" BackgroundColor="#44bd32" TextColor="White" x:Name="updatebutton" Clicked="Updatebutton_Clicked"/>
+                        <Button Grid.Row="2" Grid.Column="1"  Text="&#9940; Borrar" BackgroundColor="#eb2f06" TextColor="White" x:Name="deletebutton" Clicked="Deletebutton_Clicked"/>
+                    </Grid>
+
+                    <!-- Lista de elementos mostrados en ListView -->
+
+                    <ListView Grid.Row="3" x:Name="MyListView" HasUnevenRows="True" Margin="1" BackgroundColor="LightGray">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Grid RowDefinitions="Auto" ColumnDefinitions="1*, 3*, 4*, 6*" Padding="1" Margin="2" BackgroundColor="Bisque">
+                                        <Frame Grid.Row="0" Grid.Column="0" BorderColor="Black" Padding="5">
+                                            <Label Text="{Binding Id_usuario}" TextColor="Black" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
+                                        </Frame>
+                                        <Frame Grid.Row="0" Grid.Column="1" BorderColor="Black" Padding="5">
+                                            <Label Text="{Binding Nombre_user}" TextColor="Black" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
+                                        </Frame>
+                                        <Frame Grid.Row="0" Grid.Column="2" BorderColor="Black" Padding="5">
+                                            <Label Text="{Binding Telefono}" TextColor="Black" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
+                                        </Frame>
+                                        <Frame Grid.Row="0" Grid.Column="3" BorderColor="Black" Padding="5">
+                                            <Label Text="{Binding Email}" TextColor="Black" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
+                                        </Frame>
+                                    </Grid>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </Grid>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
