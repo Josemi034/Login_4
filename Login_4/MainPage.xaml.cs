@@ -30,7 +30,7 @@ namespace Login_4
                 return;
             }
             // Establecemos la Cadena de Conexion con el SQL Server y Nuestros datos:
-            string connectionString = "Server= 10.0.0.4,1433;Database=Inicio_de_Seccion;User Id=Jose; Password=josemiguelbaezmendez;";
+            string connectionString = "Server= 10.0.0.9,1433;Database=LOGIN_PMD;User Id=Jose; Password=josemiguelbaezmendez;";
 
             // conectar a la base de datos
             using (SqlConnection connection = new SqlConnection(connectionString))

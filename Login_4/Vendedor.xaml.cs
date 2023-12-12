@@ -40,10 +40,10 @@ namespace Login_4
             InitializeComponent(); // Inicializa la interfaz de usuario
 
             // Configuración de la cadena de conexión a la base de datos
-            string srvrdbname = "LOGIN_2023";
-            string srvrname = "xxx.xxx.xxx.xxx";
-            string srvrusername = "JUANCITO";
-            string srvrpassword = "123456";
+            string srvrdbname = "LOGIN_PMD";
+            string srvrname = "D20B5043";
+            string srvrusername = "Jose";
+            string srvrpassword = "josemiguelbaezmendez";
             string sqlconn = $"Data Source={srvrname};Initial Catalog={srvrdbname};User ID={srvrusername};Password={srvrpassword}";
             sqlConnection = new SqlConnection(sqlconn); // Inicializa la conexión a la base de datos
 

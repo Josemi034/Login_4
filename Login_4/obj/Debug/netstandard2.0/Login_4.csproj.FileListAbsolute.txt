@@ -17,3 +17,4 @@ D:\Proyecto01\Login_4\Login_4\Login_4\obj\Debug\netstandard2.0\XamlC.stamp
 D:\Proyecto01\Login_4\Login_4\Login_4\obj\Debug\netstandard2.0\Login_4.dll
 D:\Proyecto01\Login_4\Login_4\Login_4\obj\Debug\netstandard2.0\refint\Login_4.dll
 D:\Proyecto01\Login_4\Login_4\Login_4\obj\Debug\netstandard2.0\Login_4.pdb
+D:\Proyecto01\Login_4\Login_4\Login_4\obj\Debug\netstandard2.0\Login_4.sourcelink.json
